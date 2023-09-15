@@ -1,0 +1,35 @@
+
+#url to thumnail
+Endpoint: https://api.clipify.club:8000/generate_url_to_thumbnail
+{
+  "url": "https://www.betimeful.com/blogs/news-feed-eradicator"
+}
+
+prompt to generate_url_to_thumbnail
+
+Endpoint: https://api.clipify.club:8000/generate_prompt_to_thumbnail
+{
+  "prompt" : "viral video on cats"
+}
+
+#url to video
+https://api.clipify.club:8000/generate_url_video_and_social_media_post
+{
+  "url":"https://www.betimeful.com/blogs/news-feed-eradicator",
+  "video_width": 512,
+   "language_code" : "fr",
+  "video_height":1024,
+  "video_length": 100,
+  "voice_type": "male"
+}
+
+#prompt to video
+https://api.clipify.club:8000/generate_prompt_video_and_social_menia_post
+{
+  "prompt":"The history of alchemy",
+  "language_code" : "fr",
+  "video_width": 512,
+  "video_height":1024,
+  "video_length": 100,
+  "voice_type": "male"
+}

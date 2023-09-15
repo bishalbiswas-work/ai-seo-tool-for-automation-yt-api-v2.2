@@ -1,0 +1,2 @@
+elevenlabs=bcebac2d1cc093265d759aca5fdfec14
+openai=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

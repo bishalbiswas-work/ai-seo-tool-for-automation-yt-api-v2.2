@@ -1,0 +1,12 @@
+fastapi
+uvicorn
+openai
+beautifulsoup4
+librosa
+soundfile
+moviepy
+Pillow
+requests
+elevenlabs  
+numpy
+googletrans==3.1.0a0
