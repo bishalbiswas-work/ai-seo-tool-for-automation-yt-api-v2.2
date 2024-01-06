@@ -1,2 +1,2 @@
-elevenlabs=bcebac2d1cc093265d759aca5fdfec14
-openai=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
+elevenlabs=8f3d9a6936857b1e103d8df308f50ae0
+openai=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

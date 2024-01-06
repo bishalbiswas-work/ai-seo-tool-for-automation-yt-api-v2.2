@@ -12,6 +12,8 @@ app = FastAPI()
 app.mount("/static", StaticFiles(directory="static"), name="static")
 
 origins = [
+    "http://localhost:3000",
+      "http://localhost:8000",
     "http://clipify.club",
     "https://clipify.club",
     "http://www.clipify.club",
@@ -118,7 +120,7 @@ def generate_video_and_social_mendia_post_endpoint(video_data: url_VideoInput,  
     video_link = f"https://{hostname}:8000/static/videos/{new_video_name}"
     video_path = os.path.join(video_folder, new_video_name)
 
-    background_tasks.add_task(delete_video_after_delay, video_path, 60)
+    # background_tasks.add_task(delete_video_after_delay, video_path, 60)
 
     return_data = generate_url_video_and_social_mendia_post(video_data.url, video_data.video_width, video_data.video_height, video_data.video_length, video_data.voice_type, video_data.language_code, video_path)
 
@@ -142,7 +144,7 @@ def generate_prompt_video_and_social_mendia_post_endpoint(video_data: prompt_Vid
     video_link = f"https://{hostname}:8000/static/videos/{new_video_name}"
     video_path = os.path.join(video_folder, new_video_name)
 
-    background_tasks.add_task(delete_video_after_delay, video_path, 60)
+    # background_tasks.add_task(delete_video_after_delay, video_path, 60)
 
     return_data = generate_prompt_video_and_social_mendia_post(video_data.prompt, video_data.video_width, video_data.video_height, video_data.video_length, video_data.voice_type, video_data.language_code, video_path)
 

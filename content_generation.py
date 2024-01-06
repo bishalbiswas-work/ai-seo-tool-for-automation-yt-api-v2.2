@@ -186,14 +186,26 @@ def generate_better_prompts(description):
 
 
 # Function to generate an image
-def generate_image(prompt, image_count):
+# def generate_image(prompt, image_count):
 
-    response = openai.Image.create(
-        prompt=prompt,
-        n=image_count,
-        size="1024x1024"
-    )
-    return [entry['url'] for entry in response['data']]
+#     response = openai.Image.create(
+#          model= "dall-e-3",
+#         prompt=prompt,
+#         n=image_count,
+#         size="1024x1024"
+#     )
+#     return [entry['url'] for entry in response['data']]
+def generate_image(prompt, image_count):
+    urls = []
+    for _ in range(image_count):
+        response = openai.Image.create(
+            model="dall-e-3",
+            prompt=prompt,
+            size="1024x1024"
+        )
+        urls.append(response['data'][0]['url'])
+        # time.sleep(0.5)  # A small delay of 0.5 seconds between each request
+    return urls
 
 
 # Function to generate a social media post
@@ -230,9 +242,9 @@ def generate_social_media_post(topic, length):
         }
     }
 
-    prompt = f"Write a viral social media headline, text, imageDescription, hashtags, and emojis for the topic '{topic}' that is approximately '{length}' words in length."
+    prompt = f"Write a viral youtube headline, text, imageDescription, hashtags, and emojis for the topic '{topic}' that is approximately '{length}' words in length."
     messages = [
-        {"role": "system", "content": "You are a helpful social media poster maker assistant."},
+        {"role": "system", "content": "You are a helpful youtube video explainer poster maker assistant."},
         {"role": "user", "content": prompt}
     ]
 
