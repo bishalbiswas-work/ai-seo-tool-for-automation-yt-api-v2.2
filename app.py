@@ -7,7 +7,7 @@ from fastapi.security import HTTPBearer, HTTPAuthorizationCredentials
 from fastapi.staticfiles import StaticFiles
 from starlette.middleware.cors import CORSMiddleware
 
-hostname = "api.clipify.club"
+hostname = "videoapi.automateseo.co"
 app = FastAPI()
 app.mount("/static", StaticFiles(directory="static"), name="static")
 
@@ -120,7 +120,7 @@ def generate_video_and_social_mendia_post_endpoint(video_data: url_VideoInput,  
     next_count = max([int(f.split('.')[0]) for f in video_files], default=0) + 1
     new_video_name = f"{next_count:04d}{video_extension}"
 
-    video_link = f"https://{hostname}:8000/static/videos/{new_video_name}"
+    video_link = f"https://{hostname}/static/videos/{new_video_name}"
     video_path = os.path.join(video_folder, new_video_name)
 
     # background_tasks.add_task(delete_video_after_delay, video_path, 60)
@@ -144,7 +144,7 @@ def generate_prompt_video_and_social_mendia_post_endpoint(video_data: prompt_Vid
     next_count = max([int(f.split('.')[0]) for f in video_files], default=0) + 1
     new_video_name = f"{next_count:04d}{video_extension}"
 
-    video_link = f"https://{hostname}:8000/static/videos/{new_video_name}"
+    video_link = f"https://{hostname}/static/videos/{new_video_name}"
     video_path = os.path.join(video_folder, new_video_name)
 
     # background_tasks.add_task(delete_video_after_delay, video_path, 60)
