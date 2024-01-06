@@ -32,7 +32,10 @@ origins = [
     "http://translify.club",
     "https://translify.club",
     "http://www.translify.club",
-    "https://www.translify.club"
+    "https://www.translify.club",
+    "https://www.automateseo.co",
+    "https://automateseo.co",
+    "https://videoapi.automateseo.co"
 ]
 
 app.add_middleware(
